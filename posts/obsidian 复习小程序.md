@@ -1,4 +1,4 @@
-
+#obsidian
 
 我日常使用 [obsidian](https://obsidian.md/) 来记录笔记，obsidian 是一个基本纯文本的本地化笔记，可以安装各种各样的插件，很优秀的一个笔记软件。
 

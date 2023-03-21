@@ -1,4 +1,4 @@
-
+#镜像 #jdk #运维 
 
 
 1. 新建一个dockerfile
