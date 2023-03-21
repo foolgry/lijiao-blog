@@ -31,6 +31,8 @@ const buildSite = () => {
         });
     }
 
+    fs.mkdirSync("public/imgs", {recursive: true})
+
     ejs.renderFile('source/index.ejs', { posts: postData }).then(homepage => {
         fs.writeFileSync('public/index.html', homepage);
     });
