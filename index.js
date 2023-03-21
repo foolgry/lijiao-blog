@@ -10,10 +10,14 @@ const getDirInfo = (dir) => {
     const posts = fs.readdirSync(dir);
     for (let post of posts) {
         if (post.endsWith('.md') == false) continue;
-        let stat = fs.statSync(`${dir}/${post}`);
+        let content = fs.readFileSync(`${dir}/${post}`, 'utf8');
+        let lines = content.split('\n');
+        let date = lines.shift();
+        content = lines.join('\n');
         postData.push({
             title: post.replace('.md', ''),
-            date: stat.birthtime
+            date: date,
+            content: content
         });
     }
     return postData;
@@ -21,14 +25,15 @@ const getDirInfo = (dir) => {
 
 const buildSite = () => {
     let postData = getDirInfo("posts")
-    postData = postData.sort((a, b) => b.date - a.date);
+    postData = postData.sort((a, b) => b.date.localeCompare(a.date));
 
     let allTags = new Set();
     allTags.add('foolgry');
     allTags.add('blog');
 
     for (let post of postData) {
-        let content = fs.readFileSync(`posts/${post.title}.md`, 'utf8');
+        let content = post.content;
+        
         // Find text beginning with "#" and ending with a space, without "#" in the middle, and allowing multiple matches in a single line
         const regex = /(^|\s)#([^#\s]+)(?=\s)/g;
         let match;

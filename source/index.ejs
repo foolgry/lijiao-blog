@@ -15,7 +15,7 @@
         <% for (let post of posts) { %>
           <li>
             <span>
-              <%= post.date.toISOString().substring(0, 10) %> -
+              <%= post.date %> -
             </span>
             <a href="/<%= post.title %>.html">
               <%= post.title %>
