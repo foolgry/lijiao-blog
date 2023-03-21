@@ -1,0 +1,28 @@
+<%- include('header.ejs') %>
+
+  <body>
+    
+    <nav>
+      <h1>Foolgry Blog</h1>
+      <ul class="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+      <hr>
+    </nav>
+    <article class="markdown-body">
+      <ul>
+        <% for (let post of posts) { %>
+          <li>
+            <span>
+              <%= post.date.toISOString().substring(0, 10) %> -
+            </span>
+            <a href="/<%= post.title %>.html">
+              <%= post.title %>
+            </a>
+          </li>
+          <% } %>
+      </ul>
+    </article>
+
+  </body>

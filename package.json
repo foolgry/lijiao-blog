@@ -1,0 +1,20 @@
+{
+  "name": "simple-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "build": "node index.js 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "ejs": "^3.1.9",
+    "github-markdown-css": "^5.2.0",
+    "markdown-it": "^13.0.1"
+  }
+}
