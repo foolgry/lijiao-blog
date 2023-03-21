@@ -2,7 +2,6 @@ const fs = require('fs');
 const markdownIt = require('markdown-it');
 const ejs = require('ejs');
 const chokidar = require('chokidar');
-const { title } = require('process');
 
 const md = markdownIt();
 
