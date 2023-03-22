@@ -15,6 +15,7 @@
     "chokidar": "^3.5.3",
     "ejs": "^3.1.9",
     "github-markdown-css": "^5.2.0",
-    "markdown-it": "^13.0.1"
+    "markdown-it": "^13.0.1",
+    "sitemap": "^7.1.1"
   }
 }

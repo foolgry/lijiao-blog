@@ -2,6 +2,8 @@ const fs = require('fs');
 const markdownIt = require('markdown-it');
 const ejs = require('ejs');
 const chokidar = require('chokidar');
+const { createWriteStream } = require('fs');
+const { SitemapStream } = require('sitemap');
 
 const md = markdownIt();
 
@@ -23,6 +25,20 @@ const getDirInfo = (dir) => {
     return postData;
 }
 
+const createSitemap = (postData) => {
+    // Creates a sitemap object given the input configuration with URLs
+    const sitemap = new SitemapStream({ hostname: 'https://blog.foolgry.top' });
+
+    const writeStream = createWriteStream('public/sitemap.xml');
+    sitemap.pipe(writeStream);
+
+    for (const post of postData) {
+        sitemap.write(`${post.title}.html`);
+    }
+    sitemap.end();
+    writeStream.end();
+}
+
 const buildSite = () => {
     let postData = getDirInfo("posts")
     postData = postData.sort((a, b) => b.date.localeCompare(a.date));
@@ -33,7 +49,7 @@ const buildSite = () => {
 
     for (let post of postData) {
         let content = post.content;
-        
+
         // Find text beginning with "#" and ending with a space, without "#" in the middle, and allowing multiple matches in a single line
         const regex = /(^|\s)#([^#\s]+)(?=\s)/g;
         let match;
@@ -77,6 +93,8 @@ const buildSite = () => {
     for (let img of imgs) {
         fs.copyFileSync(`posts/imgs/${img}`, `public/imgs/${img}`)
     }
+
+    createSitemap(postData)
 }
 
 buildSite();
