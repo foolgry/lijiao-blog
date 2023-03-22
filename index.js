@@ -71,6 +71,7 @@ const buildSite = () => {
     }
 
     fs.copyFileSync('source/github-markdown.css', 'public/github-markdown.css');
+    fs.copyFileSync('source/googled9fa17550ecee20b.html', 'public/googled9fa17550ecee20b.html');
 
     const imgs = fs.readdirSync('posts/imgs/');
     for (let img of imgs) {
