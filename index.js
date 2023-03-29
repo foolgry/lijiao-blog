@@ -27,7 +27,7 @@ const getDirInfo = (dir) => {
 
 const createSitemap = (postData) => {
     // Creates a sitemap object given the input configuration with URLs
-    const sitemap = new SitemapStream({ hostname: 'https://blog.foolgry.top' });
+    const sitemap = new SitemapStream({ hostname: 'https://lijiao.foolgry.top' });
 
     const writeStream = createWriteStream('public/sitemap.xml');
     sitemap.pipe(writeStream);
@@ -44,7 +44,7 @@ const buildSite = () => {
     postData = postData.sort((a, b) => b.date.localeCompare(a.date));
 
     let allTags = new Set();
-    allTags.add('foolgry');
+    allTags.add('lijiao');
     allTags.add('blog');
 
     for (let post of postData) {
@@ -55,7 +55,7 @@ const buildSite = () => {
         let match;
 
         let tags = new Set();
-        tags.add('foolgry');
+        tags.add('lijiao');
         tags.add('blog');
 
         while ((match = regex.exec(content)) !== null) {
@@ -73,7 +73,7 @@ const buildSite = () => {
 
     ejs.renderFile('source/index.ejs', {
         posts: postData,
-        keywords: "foolgry, blog, 技术, 生活",
+        keywords: "lijiao, blog, 生活",
         title: ""
     }).then(homepage => {
         fs.writeFileSync('public/index.html', homepage);
