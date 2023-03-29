@@ -1,4 +1,5 @@
 {
     "livePreview.defaultPreviewPath": "/public/index.html",
-    "livePreview.serverRoot": "/public"
+    "livePreview.serverRoot": "/public",
+    "markdown-image.local.path":"./imgs"
 }
