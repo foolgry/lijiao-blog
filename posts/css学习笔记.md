@@ -1,9 +1,7 @@
-2023-04-27
-
-# CSS权威指南-上册  学习笔记 
+2023-04-28
 lijiao 2023-04-28整理  
 
-## 第一章  
+# 第一章  
 **link标签：**  
 ```html
 <link rel="stylesheet" type="text/css" href="sheet1.css" media="all">
@@ -55,7 +53,7 @@ not关键字只能在媒体查询的开头使用。
 only 在不支持媒体查询的旧浏览器中隐藏样式表。  
 
 
-## 第二章  
+# 第二章  
 **元素选择符**  
 ```css
 h1{color:black;}
@@ -206,7 +204,7 @@ a[href$='.PDF' i]
 匹配href属性的值以.pdf结尾的任何a元素，不管P、D和F这三个字母的大小写。  
 
 
-### 父子关系
+## 父子关系
 **后代选择符**  
 ```css
 h1 em{color:gray;}
@@ -243,7 +241,7 @@ h1+p{margin-top:1;}
 **同胞连结符～**  
 选择一个元素后面同属一个父元素的另一个元素。  
 
-### 伪类选择符  
+## 伪类选择符  
 **拼接伪类**  
 ```css
 a:link:hover{color:red;}
