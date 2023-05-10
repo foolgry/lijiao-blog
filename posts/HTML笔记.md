@@ -6,8 +6,8 @@ lijiao 2023-05-10整理
 注释  command /  
 在下面新建一行  command enter  
 在下面复制一行  option shift 向下箭头  
-在上面复制一行  option shifr 向上箭头. 
-删除某一行  command shift k  
+在上面复制一行  option shifr 向上箭头  
+删除某一行  command shift  
 
 
 ## 标签
@@ -115,6 +115,8 @@ div是大包装袋，span是小包装袋
 ![表格](./imgs/表格.png)
 
 ## 表单
+![表单标签](imgs/html表单标签.png)
+<!-- 
 | 标签  | 标签语义 | 常用属性                                                                                                                                                                                                                                                                                                                                                      |
 |:-----:|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | form  | 表单     | action属性:用于指定表单中的提交地址<br>target属性:用于控制表单提交后，如何打开页面，常用值:_self:在本窗口打开; _blank:在新窗口打开<br>method属性:用于控制表单的提交方式，可选值：get、post                                                                                                                                                                                    |
@@ -126,7 +128,7 @@ div是大包装袋，span是小包装袋
 |label|与表单控件做关联|for属性：值与要关联的表单控件的id值相同|
 |fieldset|表单控件分组||
 |legend|分组名称|
-
+ -->
 ## 表单控件
 **文本输入框**  
 ```html
@@ -238,47 +240,47 @@ label标签可与表单控件相关联，关联之后点击文字，与之对应
 fieldset可以为表单控件分组、legend标签是分组的标题
 ```html
 <fieldset>
-                <legend>主要信息</legend>
-                <!-- 文本输入框 -->
-                <label for="zhanghu">账户:</label>
-                <input type="text" name="account" value="" maxlength="10" id="zhanghu"><br>
-                <!-- 密码输入框 -->
-                <label>
-                    密码:
-                    <input type="password" name="password" value="" maxlength="10"><br>
-                </label>
-                <!-- 单选框 -->
-                性别:
-                <input type="radio" name="gender" value="male" id="male">
-                <label for="male">男</label>
-                <input type="radio" name="gender" value="female" id="female" checked>
-                <label for="female">女</label>
-                <br>
-            </fieldset>
-            <fieldset>
-            <legend>附加信息</legend>
-                <!-- 多选框 -->
-                爱好：
-                <label>
-                    <input type="checkbox" name="hobby" value="smoke" checked>抽烟
-                </label>
-                <label>
-                    <input type="checkbox" name="hobby" value="drink">喝酒
-                </label>
-                <label>
-                    <input type="checkbox" name="hobby" value="perm" checked>烫头<br>
-                </label>
-                <label>
-                    其它：
-                    <textarea name="other" id="" cols="30" rows="10"></textarea><br>
-                </label>
-                籍贯：<select name="place" id="">
-                    <option value="1">广东省</option>
-                    <option value="2" selected>陕西省</option>
-                    <option value="3">辽宁省</option>
-                    <option value="4">山东省</option>
-                    <option value="5">山西省</option>
-                </select><br><br> 
-        </fieldset>
+     <legend>主要信息</legend>
+    <!-- 文本输入框 -->
+    <label for="zhanghu">账户:</label>
+    <input type="text" name="account" value="" maxlength="10" id="zhanghu"><br>
+    <!-- 密码输入框 -->
+    <label>
+        密码:
+        <input type="password" name="password" value="" maxlength="10"><br>
+    </label>
+    <!-- 单选框 -->
+    性别:
+    <input type="radio" name="gender" value="male" id="male">
+    <label for="male">男</label>
+    <input type="radio" name="gender" value="female" id="female" checked>
+    <label for="female">女</label><br>
+</fieldset>
+<fieldset>
+    <legend>附加信息</legend>
+    <!-- 多选框 -->
+    爱好：
+    <label>
+        <input type="checkbox" name="hobby" value="smoke" checked>抽烟
+    </label>
+    <label>
+        <input type="checkbox" name="hobby" value="drink">喝酒
+    </label>
+    <label>
+        <input type="checkbox" name="hobby" value="perm" checked>烫头<br>
+    </label>
+    <label>
+        其它：
+        <textarea name="other" id="" cols="30" rows="10"></textarea><br>
+    </label>
+    籍贯：
+    <select name="place" id="">
+        <option value="1">广东省</option>
+        <option value="2" selected>陕西省</option>
+        <option value="3">辽宁省</option>
+        <option value="4">山东省</option>
+        <option value="5">山西省</option>
+    </select><br><br> 
+</fieldset>
 ```
 
