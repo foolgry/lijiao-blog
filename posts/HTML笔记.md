@@ -284,3 +284,13 @@ fieldset可以为表单控件分组、legend标签是分组的标题
 </fieldset>
 ```
 
+## HTML全局属性
+常用的全局属性
+| 属性名  | 含义 |  
+|:-----:|--------|
+| id  | 给标签指定唯一标识，注意：id是不能重复的。<br>  作用：可以让label标签与表单控件相关联；也可以与css、javascript配合使用。<br>  注意：不能在以下html元素中使用：head、html、meta、script、style、title |
+| class  | 给标签指定类名，随后通过css就可以给标签设置样式。 |
+| style  | 给标签设置css样式。 |
+| dir  | 内容的方向，值：ltr、rtl <br> 注意：不能在以下html元素中使用：head、html、meta、script、style、title |
+| title  | 给标签设置一个文字提示，一般超链接和图片用得比较多。 |
+| lang  | 给标签指定语言。 <br> 注意：不能在以下html元素中使用：head、html、meta、script、style、title |
